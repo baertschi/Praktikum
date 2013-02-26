@@ -96,12 +96,26 @@ Die Aufgabenstellung ist unter \url{http://moodle.bfh.ch/course/view.php?id=3380
 \subsection{Theorie}
 Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensatoren und Widerständen. Es hat verglichen zum passiven Filter (welches ausschliesslich aus diskreten Elementen wie Widerständen, Kondensatoren und Spulen) die Vorteile, dass es einfacher höhere Ordnungen erzielen kann und eine Verstärkung enthält.
 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.60\textwidth]{images/Konzeptschema.pdf}
+	\caption{Konzeptschema des Bandpasses zweiter Ordnung}
+	\label{konzeptschema}
+\end{figure}
+
 Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe Abb. \ref{konzeptschema}). Der Verstärkerblock mit der Bezeichnung $\beta$ ist im Prinzip eine nicht-invertierende OpAmp-Verstärkerschaltung mit einer Offset-Kompensation.
 
 \subsection{Dimensionierung}
 Bei der Dimensionierung sind wir genau nach der Aufgabenstellung gegangen. Zuerst haben wir das $\beta$ berechnet.
 
 Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätzlich ein Potentiometer in Serie geschaltet. Somit bleibt einen gewisser Spielraum um die Schaltung sauber abzustimmen.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.80\textwidth]{images/Schema.pdf}
+	\caption{Schema für den Aufbau}
+	\label{schema}
+\end{figure}
 
 \subsection{Simulation}
 Die Simulation wurde in LT Spice durchgeführt. Da in der Aufgabenstellung der OpAmp LM741 vorgegeben ist, mussten wir diesen zuerst noch im Spice hinzufügen. 

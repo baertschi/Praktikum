@@ -1,0 +1,67 @@
+Bericht:
+
+Einleitung
+---------------
+
+Praktikumsunterlagen erwähnen
+
+
+Dimensionierung
+---------------
+
+1) K: vorgegeben = 25
+Da Q auch vorgegeben: Bedingung (9) prüfen -> stimmt
+
+2) Beta nach Quadr. Formel ausrechnen -> 2 Lösungen -> kleinerer Wert (aus Empf. Gründen -> Unterlagen) gewählt: 2.53
+
+3) klein r aus Formel (7) berechnen: 0.505
+   (r ist einheitenlos, wird als Hilfgrösse zur Verhältnisberechnung der Widerstände verwendet)
+
+4) R1 nach (6a) berechnen: 31.5k (da C vorgegeben = 10nF)
+
+5) R2 = 8.04k
+
+Widerstandswahl (Proporzwahl):
+
+R0: 1k (aus Unterlagen vorgegeben)
+R1: (E12) Serieschaltung R11 + R12, 27k + 3.3k erreicht (= 30.3 statt 31.5) Abweichung ist vernachlässigbar da die Mittenfrequenz auch mit R2 abgestimmt werden kann.
+R2: (E12) Serieschaltung R21 + R22, 6.8k + 2k Poti. Dadurch erreichen wir einen Abstimmbereich von 6.8k bis 8.8k bei einem Idealwert von 8.04k. Wenn der notwendige Bereich sich durch Ungenauigkeit verschoben hat, werden wir R21 variieren (z.B. auf 8.2k)
+
+Kondensatorwahl:
+
+C  = C1 = C2 = 10nF und C3 = C/2 = 4.7nF
+
+
+Schema
+------------------
+
+<bild>
+
+
+OpAmp Beschaltung Dimensionierung
+-----------------------------------
+
+Roff = 39k (gewählt: 39k, E12)
+R0*(Beta - 1) = 1.53, variabel = Serieschaltung 1k + 2k Poti.
+
+
+Abstimmung
+-------------------------
+
+Mittenfrequenz: Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. Da die Amplitude in der Nähe der Mittenfrequenz recht flach ist, kann man damit schlecht abstimmen. Laut dem erwarteten Phasengang eines Bandpasses wird sich dort die Phase aber schnell ändern und bei perfekter Abstimmung bei 45° sein.
+
+<bandpass Bode diagramm>
+
+<Messaufbau - Blockschema und Bild>
+
+Um den Abstimmbereich (zuerst nur 12° - 60°) zu ändern, ändern wir R21 von 6.8k auf 8.2ka
+
+
+Messmittelliste
+
+Signalgenerator: HP 33120A (MG 231-2)
+Speisegerät: TTi PL320QMD (MN 221-4)
+Multimeter: HP 34401A (MM 319-2) (für RMS messungen)
+Phasemeter: 
+KO:  Agilent DSO1022A (MK220-2)
+Multimeter: roline RO-334 (für Widerstände und Speisegerät Kontrolle)

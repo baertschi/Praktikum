@@ -24,7 +24,7 @@ Class=CLatexEdit
 Document=ActiveFilter.tex
 
 [Frame0_Row0]
-cyCur=550
+cyCur=720
 cyMin=10
 
 [Frame0_Col0]
@@ -32,7 +32,7 @@ cxCur=1543
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=102
-Cursor.column=10
-TopSubLine=53
+Cursor.row=115
+Cursor.column=31
+TopSubLine=95
 
