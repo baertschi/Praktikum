@@ -12,6 +12,6 @@ V1 N003 0 ac 1
 V2 V+ 0 15
 V3 0 V- 15
 .lib LM741.sub
-.ac dec 100 100 10000
+.ac dec 1000 900 1200
 .backanno
 .end
