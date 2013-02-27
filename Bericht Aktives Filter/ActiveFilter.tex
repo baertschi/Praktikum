@@ -8,7 +8,7 @@
 \usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
 
 %% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
-\usepackage{graphicx} %%Zum Laden von Grafiken
+\usepackage[draft]{graphicx} %%Zum Laden von Grafiken
 %\usepackage{subfig} %%Teilabbildungen in einer Abbildung
 %\usepackage{tikz} %%Vektorgrafiken aus LaTeX heraus erstellen
 
@@ -25,6 +25,8 @@
 %\usepackage{longtable} %%Für Tabellen, die eine Seite überschreiten
 \usepackage{lastpage}
 \usepackage[raggedright]{subfigure}
+\usepackage[final]{pdfpages}
+\includepdfset{pages=-,noautoscale}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% TODO
@@ -47,7 +49,7 @@
 
 \title{Praktikum 4.2: Aktives Filter}
 \date{\today}
-\author{Cyril Stoller, Marcel}
+\author{Cyril Stoller, Marcel Bärtschi}
 \maketitle
 
 %% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,8 +143,17 @@ Messmittelliste ist im Anhang zu finden.
 \section{Schlussfolgerung}
 Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir beim Aufbau zu viel Zeit verloren, die uns danach gefehlt hat, um die Auswertung noch detaillierter zu gestalten. So hatten wir zum Beispiel keine Zeit mehr die Güte anhand der Bandbreite und der Mittenfrequenz nachzukontrollieren. 
 
+
+
 \section{Literaturverzeichnis}
 
-\section{Anhang}
+% Der Anhang kommt auf eine neue Zeile
+\newpage
+% Offizielle "A Anhang" Aufzählungsvariante
+\appendix
+% Nur im Inhaltsverzeichnis hinzufügen (mit richtiger Seite, da vorher "\newpage"), aber kein Text
+\addcontentsline{toc}{section}{Anhang}
+
+\includepdf{Praktikumsunterlagen.pdf}
 
 \end{document}
