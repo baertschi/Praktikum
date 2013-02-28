@@ -8,7 +8,7 @@
 \usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
 
 %% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
-\usepackage[draft]{graphicx} %%Zum Laden von Grafiken
+\usepackage{graphicx} %%Zum Laden von Grafiken
 %\usepackage{subfig} %%Teilabbildungen in einer Abbildung
 %\usepackage{tikz} %%Vektorgrafiken aus LaTeX heraus erstellen
 
@@ -145,8 +145,13 @@ Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung
 
 
 
-\section{Literaturverzeichnis}
+\section*{Quellenverzeichnis}
+
+\renewcommand\refname{Quellenverzeichnis}
+\bibliographystyle{amsplain}
 \bibliography{Bildquellen}
+
+\listoffigures
 
 % Der Anhang kommt auf eine neue Zeile
 \newpage
