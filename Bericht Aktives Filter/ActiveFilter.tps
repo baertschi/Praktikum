@@ -28,17 +28,11 @@ cyCur=652
 cyMin=10
 
 [Frame0_Col0]
-cxCur=1693
+cxCur=1543
 cxMin=10
 
 [Frame0_View0,0]
-<<<<<<< HEAD
-Cursor.row=85
-Cursor.column=20
-TopSubLine=58
-=======
 Cursor.row=81
 Cursor.column=0
 TopSubLine=81
->>>>>>> c89920d6300aaaa608f6fe1d431598f04f7df07f
 
