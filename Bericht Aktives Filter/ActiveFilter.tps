@@ -4,7 +4,7 @@ Version=2
 
 [SessionInfo]
 ActiveTab=0
-FrameCount=1
+FrameCount=2
 ActiveFrame=0
 
 [Frame0]
@@ -32,7 +32,36 @@ cxCur=1543
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=81
-Cursor.column=0
-TopSubLine=81
+Cursor.row=143
+Cursor.column=68
+TopSubLine=144
+
+[Frame1]
+Columns=1
+Rows=1
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-8
+MaxPos.y=-30
+NormalPos.left=0
+NormalPos.top=0
+NormalPos.right=1364
+NormalPos.bottom=473
+Class=CLatexEdit
+Document=Bildquellen.bib
+
+[Frame1_Row0]
+cyCur=414
+cyMin=10
+
+[Frame1_Col0]
+cxCur=1327
+cxMin=10
+
+[Frame1_View0,0]
+Cursor.row=0
+Cursor.column=19
+TopSubLine=0
 
