@@ -101,7 +101,7 @@ Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensator
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.60\textwidth]{images/Konzeptschema.pdf}
-	\caption[Konzeptschema des Bandpasses zweiter Ordnung]{Konzeptschema des Bandpasses zweiter Ordnung\cite{konzeptschema}}
+	\caption{Konzeptschema des Bandpasses zweiter Ordnung}
 	\label{konzeptschema}
 \end{figure}
 
@@ -130,7 +130,14 @@ Der Aufbau auf der Steckplatte hat uns am meisten Schwierigkeiten bereitet. Glei
 \subsection{Abstimmung}
 
 \subsubsection{Mittenfrequenz}
-Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. Da die Amplitude in der Nähe der Mittenfrequenz recht flach ist, kann man damit schlecht abstimmen. Laut dem erwarteten Phasengang eines Bandpasses wird sich dort die Phase aber schnell ändern und bei perfekter Abstimmung bei 45° sein.
+Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. Abbildung \ref{bandpass} zeigt ein konzeptuelles Bodediagramm eines Bandpasses. Man kann gut sehen, dass die Amplitude in der Nähe der Mittenfrequenz recht flach ist, das heisst, schlecht abstimmbar. Laut dem erwarteten Phasengang eines Bandpasses wird sich dort die Phase aber schnell ändern und bei perfekter Abstimmung bei 45° sein. Deshalb werden wird den Bandpass über die Phasenverschiebung abstimmen.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.80\textwidth]{images/bandpass.png}
+	\caption[Konzeptuelles Bodediagramm eines Bandpasses]{Konzeptuelles Bodediagramm eines Bandpasses\cite{bandpass}}
+	\label{bandpass}
+\end{figure}
 
 \subsection{Messung}
 Messmittelliste ist im Anhang zu finden.
@@ -145,7 +152,7 @@ Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung
 
 
 
-\section*{Quellenverzeichnis}
+\addcontentsline{toc}{section}{Quellenverzeichnis}
 
 \renewcommand\refname{Quellenverzeichnis}
 \bibliographystyle{amsplain}
