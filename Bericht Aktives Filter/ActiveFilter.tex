@@ -108,7 +108,10 @@ Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensator
 Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe Abb. \ref{konzeptschema}). Der Verstärkerblock mit der Bezeichnung $\beta$ ist im Prinzip eine nicht-invertierende OpAmp-Verstärkerschaltung mit einer Offset-Kompensation.
 
 \subsection{Dimensionierung}
-Bei der Dimensionierung sind wir genau nach der Aufgabenstellung gegangen. Zuerst haben wir das $\beta$ berechnet.
+Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen.
+
+\subsubsection{Beta}
+Zuerst haben wir das $\beta$ berechnet. 
 
 Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätzlich ein Potentiometer in Serie geschaltet. Somit bleibt einen gewisser Spielraum um die Schaltung sauber abzustimmen.
 
@@ -139,7 +142,7 @@ Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. A
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=0.80\textwidth]{images/bandpass.png}
+		\includegraphics[width=0.70\textwidth]{images/bandpass.png}
 	\caption[Konzeptuelles Bodediagramm eines Bandpasses]{Konzeptuelles Bodediagramm eines Bandpasses\cite{bandpass}}
 	\label{bandpass}
 \end{figure}
@@ -155,6 +158,36 @@ Messmittelliste ist im Anhang zu finden.
 \section{Schlussfolgerung}
 Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir beim Aufbau zu viel Zeit verloren, die uns danach gefehlt hat, um die Auswertung noch detaillierter zu gestalten. So hatten wir zum Beispiel keine Zeit mehr die Güte anhand der Bandbreite und der Mittenfrequenz nachzukontrollieren. 
 
+
+\section{Formeln (kommen am schluss noch in den Fliesstext - nur als container hier}
+
+\url{http://www.hostmath.com/}
+
+\renewcommand{\theequation}{\Roman{equation}} 
+
+\begin{equation}
+	r=\frac{\beta \cdot Q}{K}
+\end{equation}
+
+\begin{equation}
+	\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation}
+
+\begin{equation}
+	R_2 = r^2 \cdot R
+\end{equation}
+
+\begin{equation}
+	\omega_0=\frac{1}{r \cdot R \cdot C}
+\end{equation}
+
+Quadratische Formel: 
+
+Formel 7: 
+
+Formel 6a: 
+
+Widerstände: 
 
 
 \addcontentsline{toc}{section}{Quellenverzeichnis}
