@@ -96,7 +96,7 @@ Die Aufgabenstellung ist unter \url{http://moodle.bfh.ch/course/view.php?id=3380
 \section{Durchführung}
 
 \subsection{Theorie}
-Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensatoren und Widerständen. Es hat verglichen zum passiven Filter (welches ausschliesslich aus diskreten Elementen wie Widerständen, Kondensatoren und Spulen) die Vorteile, dass es einfacher höhere Ordnungen erzielen kann und eine Verstärkung enthält.
+Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensatoren und Widerständen. Dies bedeutet, dass das Filter an die Speisung angeschlossen ist. Es hat verglichen zum passiven Filter (welches ausschliesslich aus diskreten Elementen wie Widerständen, Kondensatoren und Spulen besteht und nicht gespiesen wird) die Vorteile, dass es einfacher höhere Ordnungen erzielen kann und eine Verstärkung enthält.
 
 \begin{figure}[ht]
 	\centering
@@ -105,15 +105,40 @@ Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensator
 	\label{konzeptschema}
 \end{figure}
 
-Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe Abb. \ref{konzeptschema}). Der Verstärkerblock mit der Bezeichnung $\beta$ ist im Prinzip eine nicht-invertierende OpAmp-Verstärkerschaltung mit einer Offset-Kompensation.
+Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe Abb. \ref{konzeptschema}). Der Verstärkerblock mit der Bezeichnung $\beta$ ist im Prinzip eine nicht-invertierende OpAmp-Verstärkerschaltung mit einer Offset-Kompensation, wobei die innere Verstärkung durch die Gegenkopplung realisiert ist.
 
 \subsection{Dimensionierung}
-Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen.
+Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen. Vorgegeben waren folgende Werte: f\textsubscript{0} = 1kHz, Q = 5, K = 25, C = 10nF
+Da Q auch vorgegeben ist, können wir Bedingung 9 pfüfen, welche unter diesen Umständen erfüllt ist.
 
 \subsubsection{Beta}
-Zuerst haben wir das $\beta$ berechnet. 
+Der zweite Schritt ist es, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit der Formel 8, welche wir nach $\beta$ umgestellt haben. Dies ergibt zwei Lösungen, da die Gleichung vom Grad 2 ist. Laut der Aufgabenstellung ist es besser für die Empfindlichkeit den tieferen Wert zu wählen. So kommen wir auf $\beta$ = 2.53.
+
+\subsection{r}
+Danach haben wir r aus der Formel 7 berechnet. r ist einheitenlos und wird als Hilfgrösse zur Verhältnisberechnung der Widerstände verwendet. Es ergibt sich ein r von: r = 0.505
+
+\subsection{Widerständswahl}
+R1 nach (6a) berechnen: R1 = 31.5k$\Omega$. Da die Kondensatoren vorgegeben sind (C = 10nF), existiert kein Freiheitsgrad mehr und die Widerstände können exakt berechnet werden.
 
 Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätzlich ein Potentiometer in Serie geschaltet. Somit bleibt einen gewisser Spielraum um die Schaltung sauber abzustimmen.
+
+R0: 1k$\Omega$ (aus Unterlagen vorgegeben)
+
+R1: (E12) Serieschaltung R11 + R12, 27k$\Omega$ + 3.3k$\Omega$ erreicht (= 30.3k$\Omega$ statt 31.5k$\Omega$) Abweichung ist vernachlässigbar da die Mittenfrequenz auch mit R2 abgestimmt werden kann.
+
+R2: (E12) Serieschaltung R21 + R22, 6.8k$\Omega$ + 2k$\Omega$ Poti. Dadurch erreichen wir einen Abstimmbereich von 6.8k$\Omega$ bis 8.8k$\Omega$ bei einem Idealwert von 8.04k$\Omega$. Wenn der notwendige Bereich sich durch Ungenauigkeit verschoben hat, werden wir R21 variieren (z.B. auf 8.2k$\Omega$)
+
+\subsection{Kondensatorwahl}
+Bei dieser Wahl blieb nicht viel Spielraum übrig.
+
+C  = C1 = C2 = 10nF und C3 = C/2 = 4.7nF
+
+C3 ist um 300pF zu klein gewählt, da 5nF Kondensatoren nicht sehr handelsüblich sind. Man könnte den Wert verbessern, indem man einen 330pF Kondensator parallel schaltet, jedoch nehmen wir die Abweichung in Kauf und versuchen diese allenfalls bei der Abstimmung mit den Potis wieder wett zu machen.
+
+\subsection{OpAmp Beschaltung}
+R\textsubscript{off} = 39k$\Omega$ (gewählt: 39k$\Omega$, E12)
+
+R0*($\beta$ - 1) = 1.53, variabel = Serieschaltung 1k$\Omega$ + 2k$\Omega$ Poti.
 
 \begin{figure}[ht]
 	\centering
@@ -126,6 +151,7 @@ Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätz
 Die Simulation wurde in LT Spice durchgeführt. Da in der Aufgabenstellung der OpAmp LM741 vorgegeben ist, mussten wir diesen zuerst noch im Spice hinzufügen. 
 Danach die Simulation gemäss dem Schema aufbauen und die Werte entsprechend der Dimensionierung wählen. Die Widerstände haben wir in der Simulation genau auf den berechneten Wert eingestellt. Bei der realen Schaltung haben wir einen Näherungswert genommen und mit einem Potentiometer in Serie zum Widerstand den Wert genau abgeglichen.
 
+Das Ergebnis der Simulation stimmt recht genau mit dem gemessenen Ergebnis überein. Jedoch ist die Mittenfrequenz nicht genau gleich abgestimmt. Die Bandbreite der Simmulation beträgt 
 
 \subsection{Aufbau}
 Der Aufbau auf der Steckplatte hat uns am meisten Schwierigkeiten bereitet. Gleich zwei mal hatten wir einen Fehler im Aufbau. 
