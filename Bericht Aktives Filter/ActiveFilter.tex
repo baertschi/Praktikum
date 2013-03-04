@@ -42,9 +42,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Einstellungen}
 
-% Formeln römisch nummereieren
-
+% Formeln römisch nummerieren
 \renewcommand{\theequation}{\Roman{equation}} 
+
+% "Formel" statt "Gleichung"
+\def\equationname{Formel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DOKUMENT
@@ -113,7 +115,7 @@ Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe \autoref{konzeptsch
 
 \subsection{Dimensionierung}
 Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen. Vorgegeben waren folgende Werte: $f_0$ = 1kHz, Q = 5, K = 25, C = 10nF
-Da Q auch vorgegeben ist, können wir Bedingung \autoref{bedingungK}(siehe Formel (9) in der Aufgabenstellung) prüfen, welche unter diesen Umständen erfüllt ist.
+Da Q auch vorgegeben ist, können wir Bedingung \ref{bedingungK}\ (siehe Formel (9) in der Aufgabenstellung) prüfen, welche unter diesen Umständen erfüllt ist.
 
 \begin{equation}
 K > \sqrt{5} \cdot Q - 1
@@ -121,7 +123,7 @@ K > \sqrt{5} \cdot Q - 1
 \end{equation}
 
 \subsubsection{Beta}
-Der zweite Schritt ist, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit der Formel \autoref{beta} (siehe Formel (8) in der Aufgabenstellung), welche wir nach $\beta$ umgestellt haben. Dies ergibt zwei Lösungen, da die Gleichung vom Grad 2 ist. Laut der Aufgabenstellung ist es besser für die Empfindlichkeit den tieferen Wert der beiden zu wählen. So kommen wir auf $\beta$ = 2.53.
+Der zweite Schritt ist, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit Formel \ref{beta}\ (siehe Formel (8) in der Aufgabenstellung), welche wir nach $\beta$ umgestellt haben. Dies ergibt zwei Lösungen, da die Gleichung vom Grad 2 ist. Laut der Aufgabenstellung ist es besser für die Empfindlichkeit den tieferen Wert der beiden zu wählen. So kommen wir auf $\beta$ = 2.53.
 
 \begin{equation}
 \beta^2 - \frac{2 \cdot K^2 + 2 \cdot K}{Q^2} \cdot \beta + \frac{5 \cdot K^2}{Q^2} = 0
@@ -129,18 +131,20 @@ Der zweite Schritt ist, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit
 \end{equation}
 
 \subsubsection{r}
-Danach haben wir r aus der Formel (siehe Formel (7) in der Aufgabestellung) berechnet. r ist einheitenlos und wird als Hilfgrösse zur Verhältnisberechnung der Widerstände verwendet. Es ergibt sich ein r von: r = 0.505
+Danach haben wir r aus Formel \ref{r}\ (siehe Formel (7) in der Aufgabestellung) berechnet. r ist einheitenlos und wird als Hilfgrösse zur Verhältnisberechnung der Widerstände verwendet. Es ergibt sich ein r von: r = 0.505
 
 \begin{equation}
 r = \frac{\beta \cdot Q}{K}
+\label{r}
 \end{equation}
 
 
 \subsubsection{Widerstandswahl}
-R1 nach Formel (siehe Formel (6a) in der Aufgabenstellung) berechnen: R1 = 31.5k$\Omega$. Da die Kondensatoren vorgegeben sind (C = 10nF), existiert kein Freiheitsgrad mehr und die Widerstände können alle exakt berechnet werden.
+R1 nach Formel Formel \ref{omega}\ (siehe Formel (6a) in der Aufgabenstellung) berechnen: R1 = 31.5k$\Omega$. Da die Kondensatoren vorgegeben sind (C = 10nF), existiert kein Freiheitsgrad mehr und die Widerstände können alle exakt berechnet werden.
 
 \begin{equation}
  \omega_0 = \frac{1}{r \cdot R \cdot C}
+ \label{omega}
 \end{equation}
 
 Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätzlich ein Potentiometer in Serie geschaltet (siehe \autoref{schema}). Somit bleibt einen gewisser Spielraum um die Schaltung später sauber abzustimmen.
@@ -256,34 +260,6 @@ In den Grafiken sieht man schön, dass die Mittenfrequenz sauber auf 1kHz abgesti
 Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir bei der Fehlersuche im Hardware Aufba viel Zeit verloren, die uns danach für die detaillierte Auswertung gefehlt hat. So hatten wir zum Beispiel keine Zeit mehr, die Güte anhand der Bandbreite und der Mittenfrequenz mit Messungen nachzukontrollieren.
 
 
-\section{Formeln (kommen am schluss noch in den Fliesstext - nur als container hier}
-
-\url{http://www.hostmath.com/}
-
-\begin{equation}
-	r=\frac{\beta \cdot Q}{K}
-\end{equation}
-
-\begin{equation}
-	\frac{-b\pm\sqrt{b^2-4ac}}{2a}
-\end{equation}
-
-\begin{equation}
-	R_2 = r^2 \cdot R
-\end{equation}
-
-\begin{equation}
-	\omega_0=\frac{1}{r \cdot R \cdot C}
-\end{equation}
-
-Quadratische Formel: 
-
-Formel 7: 
-
-Formel 6a: 
-
-Widerstände: 
-
 
 \addcontentsline{toc}{section}{Quellenverzeichnis}
 
@@ -291,7 +267,7 @@ Widerstände:
 \bibliographystyle{amsplain}
 \bibliography{Bildquellen}
 
-\listoffigures
+%\listoffigures
 
 % Der Anhang kommt auf eine neue Zeile
 \newpage
