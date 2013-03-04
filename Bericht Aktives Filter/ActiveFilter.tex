@@ -113,20 +113,24 @@ Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe \autoref{konzeptsch
 
 \subsection{Dimensionierung}
 Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen. Vorgegeben waren folgende Werte: $f_0$ = 1kHz, Q = 5, K = 25, C = 10nF
-Da Q auch vorgegeben ist, können wir Bedingung \autoref{bedingungK}(siehe Formel (9) in der Aufgabenstellung) pfüfen, welche unter diesen Umständen erfüllt ist.
+Da Q auch vorgegeben ist, können wir Bedingung \autoref{bedingungK}(siehe Formel (9) in der Aufgabenstellung) prüfen, welche unter diesen Umständen erfüllt ist.
+
 \begin{equation}
 K > \sqrt{5} \cdot Q - 1
 \label{bedingungK}
 \end{equation}
 
 \subsubsection{Beta}
-Der zweite Schritt ist, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit der Formel \autoref{equation}(siehe Formel (8) in der Aufgabenstellung), welche wir nach $\beta$ umgestellt haben. Dies ergibt zwei Lösungen, da die Gleichung vom Grad 2 ist. Laut der Aufgabenstellung ist es besser für die Empfindlichkeit den tieferen Wert der beiden zu wählen. So kommen wir auf $\beta$ = 2.53.
+Der zweite Schritt ist, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit der Formel \autoref{beta} (siehe Formel (8) in der Aufgabenstellung), welche wir nach $\beta$ umgestellt haben. Dies ergibt zwei Lösungen, da die Gleichung vom Grad 2 ist. Laut der Aufgabenstellung ist es besser für die Empfindlichkeit den tieferen Wert der beiden zu wählen. So kommen wir auf $\beta$ = 2.53.
+
 \begin{equation}
 \beta^2 - \frac{2 \cdot K^2 + 2 \cdot K}{Q^2} \cdot \beta + \frac{5 \cdot K^2}{Q^2} = 0
+\label{beta}
 \end{equation}
 
 \subsubsection{r}
 Danach haben wir r aus der Formel (siehe Formel (7) in der Aufgabestellung) berechnet. r ist einheitenlos und wird als Hilfgrösse zur Verhältnisberechnung der Widerstände verwendet. Es ergibt sich ein r von: r = 0.505
+
 \begin{equation}
 r = \frac{\beta \cdot Q}{K}
 \end{equation}
@@ -134,9 +138,11 @@ r = \frac{\beta \cdot Q}{K}
 
 \subsubsection{Widerstandswahl}
 R1 nach Formel (siehe Formel (6a) in der Aufgabenstellung) berechnen: R1 = 31.5k$\Omega$. Da die Kondensatoren vorgegeben sind (C = 10nF), existiert kein Freiheitsgrad mehr und die Widerstände können alle exakt berechnet werden.
+
 \begin{equation}
  \omega_0 = \frac{1}{r \cdot R \cdot C}
 \end{equation}
+
 Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätzlich ein Potentiometer in Serie geschaltet (siehe \autoref{schema}). Somit bleibt einen gewisser Spielraum um die Schaltung später sauber abzustimmen.
 
 \begin{description}
@@ -178,10 +184,10 @@ Danach die Simulation gemäss dem Schema aufbauen und die Werte entsprechend Dime
 \begin{figure}[!ht]
 	\centering
 	\subfigure[Aplitude]{
-		\includegraphics[width=\textwidth]{images/simulation_amplitude.pdf}
+		\includegraphics[width=0.80\textwidth]{images/simulation_amplitude.pdf}
 	}
 		\subfigure[Phase]{
-		\includegraphics[width=\textwidth]{images/simulation_phase.pdf}
+		\includegraphics[width=0.80\textwidth]{images/simulation_phase.pdf}
 	}	
 	\caption{Bodediagramm der simulierten Filtercharakteristik}
 	\label{simulation_bode}
@@ -219,10 +225,10 @@ Messmittelliste und Messtabelle sind im Anhang zu finden.
 \begin{figure}[!ht]
 	\centering
 	\subfigure[Aplitude]{
-		\includegraphics[width=\textwidth]{images/messung_amplitude.pdf}
+		\includegraphics[width=0.80\textwidth]{images/messung_amplitude.pdf}
 	}
 		\subfigure[Phase]{
-		\includegraphics[width=\textwidth]{images/messung_phase.pdf}
+		\includegraphics[width=0.80\textwidth]{images/messung_phase.pdf}
 	}	
 	\caption{Bodediagramm der gemessenen Filtercharakteristik}
 	\label{messung_bode}
