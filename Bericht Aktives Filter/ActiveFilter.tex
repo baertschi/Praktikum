@@ -108,37 +108,39 @@ Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensator
 Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe \autoref{konzeptschema}). Der Verstärkerblock mit der Bezeichnung $\beta$ ist im Prinzip eine nicht-invertierende OpAmp-Verstärkerschaltung mit einer Offset-Kompensation, wobei die innere Verstärkung durch die Gegenkopplung realisiert ist.
 
 \subsection{Dimensionierung}
-Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen. Vorgegeben waren folgende Werte: f\textsubscript{0} = 1kHz, Q = 5, K = 25, C = 10nF
+Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen. Vorgegeben waren folgende Werte: $f_0$ = 1kHz, Q = 5, K = 25, C = 10nF
 Da Q auch vorgegeben ist, können wir Bedingung 9 pfüfen, welche unter diesen Umständen erfüllt ist.
 
 \subsubsection{Beta}
-Der zweite Schritt ist es, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit der Formel 8, welche wir nach $\beta$ umgestellt haben. Dies ergibt zwei Lösungen, da die Gleichung vom Grad 2 ist. Laut der Aufgabenstellung ist es besser für die Empfindlichkeit den tieferen Wert zu wählen. So kommen wir auf $\beta$ = 2.53.
+Der zweite Schritt ist, die Verstärkung $\beta$ zu berechnen. Dies geschieht mit der Formel 8, welche wir nach $\beta$ umgestellt haben. Dies ergibt zwei Lösungen, da die Gleichung vom Grad 2 ist. Laut der Aufgabenstellung ist es besser für die Empfindlichkeit den tieferen Wert der beiden zu wählen. So kommen wir auf $\beta$ = 2.53.
 
-\subsection{r}
+\subsubsection{r}
 Danach haben wir r aus der Formel 7 berechnet. r ist einheitenlos und wird als Hilfgrösse zur Verhältnisberechnung der Widerstände verwendet. Es ergibt sich ein r von: r = 0.505
 
-\subsection{Widerständswahl}
-R1 nach (6a) berechnen: R1 = 31.5k$\Omega$. Da die Kondensatoren vorgegeben sind (C = 10nF), existiert kein Freiheitsgrad mehr und die Widerstände können exakt berechnet werden.
+\subsubsection{Widerstandswahl}
+R1 nach Formel 6a berechnen: R1 = 31.5k$\Omega$. Da die Kondensatoren vorgegeben sind (C = 10nF), existiert kein Freiheitsgrad mehr und die Widerstände können alle exakt berechnet werden.
 
-Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätzlich ein Potentiometer in Serie geschaltet. Somit bleibt einen gewisser Spielraum um die Schaltung sauber abzustimmen.
+Um die Werte genau zu erreichen, haben wir bei den Widerständen R1 und R3 zusätzlich ein Potentiometer in Serie geschaltet (siehe \autoref{schema}). Somit bleibt einen gewisser Spielraum um die Schaltung später sauber abzustimmen.
 
-R0: 1k$\Omega$ (aus Unterlagen vorgegeben)
+\begin{description}
+	\item[R0] 1k$\Omega$ (aus Unterlagen vorgegeben)
 
-R1: (E12) Serieschaltung R11 + R12, 27k$\Omega$ + 3.3k$\Omega$ erreicht (= 30.3k$\Omega$ statt 31.5k$\Omega$) Abweichung ist vernachlässigbar da die Mittenfrequenz auch mit R2 abgestimmt werden kann.
+	\item[R1] (E12 Reihe) Serieschaltung $R_{11}$ + $R_{12}$, 27k$\Omega$ + 3.3k$\Omega$ erreicht (= 30.3k$\Omega$ statt 31.5k$\Omega$) Abweichung ist vernachlässigbar da die Mittenfrequenz auch mit R2 abgestimmt werden kann.
 
-R2: (E12) Serieschaltung R21 + R22, 6.8k$\Omega$ + 2k$\Omega$ Poti. Dadurch erreichen wir einen Abstimmbereich von 6.8k$\Omega$ bis 8.8k$\Omega$ bei einem Idealwert von 8.04k$\Omega$. Wenn der notwendige Bereich sich durch Ungenauigkeit verschoben hat, werden wir R21 variieren (z.B. auf 8.2k$\Omega$)
+	\item[R2] (E12 Reihe) Serieschaltung R21 + R22, 6.8k$\Omega$ + 2k$\Omega$ Poti. Dadurch erreichen wir einen Abstimmbereich von 6.8k$\Omega$ bis 8.8k$\Omega$ bei einem Idealwert von 8.04k$\Omega$. Wenn sich der notwendige Bereich durch Ungenauigkeit verschoben hat, werden wir R21 variieren (z.B. auf 8.2k$\Omega$)] 
+\end{description}
 
-\subsection{Kondensatorwahl}
+\subsubsection{Kondensatorwahl}
 Bei dieser Wahl blieb nicht viel Spielraum übrig.
 
-C  = C1 = C2 = 10nF und C3 = C/2 = 4.7nF
+C  = C1 = C2 = 10nF und C3 = $\frac{1}{2} C$ = 4.7nF
 
 C3 ist um 300pF zu klein gewählt, da 5nF Kondensatoren nicht sehr handelsüblich sind. Man könnte den Wert verbessern, indem man einen 330pF Kondensator parallel schaltet, jedoch nehmen wir die Abweichung in Kauf und versuchen diese allenfalls bei der Abstimmung mit den Potis wieder wett zu machen.
 
-\subsection{OpAmp Beschaltung}
-R\textsubscript{off} = 39k$\Omega$ (gewählt: 39k$\Omega$, E12)
+\subsubsection{OpAmp Beschaltung}
+$R_{off}$ = 39k$\Omega$ (gewählt: 39k$\Omega$, E12)
 
-R0*($\beta$ - 1) = 1.53, variabel = Serieschaltung 1k$\Omega$ + 2k$\Omega$ Poti.
+$R0 \cdot (\beta - 1)$ = 1.53 ist aufgeteilt in $R_{01}$ und $R_{02}$. Serieschaltung 1k$\Omega$ + 2k$\Omega$ Poti.
 
 \begin{figure}[ht]
 	\centering
@@ -149,12 +151,12 @@ R0*($\beta$ - 1) = 1.53, variabel = Serieschaltung 1k$\Omega$ + 2k$\Omega$ Poti.
 
 \subsection{Simulation}
 Die Simulation wurde in LT Spice durchgeführt. Da in der Aufgabenstellung der OpAmp LM741 vorgegeben ist, mussten wir diesen zuerst noch im Spice hinzufügen. 
-Danach die Simulation gemäss dem Schema aufbauen und die Werte entsprechend der Dimensionierung wählen. Die Widerstände haben wir in der Simulation genau auf den berechneten Wert eingestellt. Bei der realen Schaltung haben wir einen Näherungswert genommen und mit einem Potentiometer in Serie zum Widerstand den Wert genau abgeglichen.
+Danach die Simulation gemäss dem Schema aufbauen und die Werte entsprechend Dimensionierung wählen. Die Widerstände haben wir in der Simulation genau auf den berechneten Wert eingestellt. Bei der realen Schaltung haben wir einen Näherungswert genommen und mit einem Potentiometer in Serie zum Widerstand den Wert genau abgeglichen.
 
-Das Ergebnis der Simulation stimmt recht genau mit dem gemessenen Ergebnis überein. Jedoch ist die Mittenfrequenz nicht genau gleich abgestimmt. Die Bandbreite der Simmulation beträgt 
+Das Ergebnis der Simulation stimmt recht genau mit dem gemessenen Ergebnis überein. Jedoch ist die Mittenfrequenz nicht genau gleich abgestimmt. Die Bandbreite der Simulation beträgt 
 
 \subsection{Aufbau}
-Der Aufbau auf der Steckplatte hat uns am meisten Schwierigkeiten bereitet. Gleich zwei mal hatten wir einen Fehler im Aufbau. 
+Der Aufbau auf der Steckplatte (\autoref{Aufbau}), hat uns am meisten Schwierigkeiten bereitet. Gleich zwei Mal hatten wir einen Fehler im Aufbau. 
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.80\textwidth]{images/Foto_2.JPG}
@@ -164,7 +166,7 @@ Der Aufbau auf der Steckplatte hat uns am meisten Schwierigkeiten bereitet. Glei
 
 \subsection{Abstimmung}
 %\subsubsection{Mittenfrequenz}
-Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. Abbildung \ref{bandpass} zeigt ein konzeptuelles Bodediagramm eines Bandpasses. Man kann gut sehen, dass die Amplitude in der Nähe der Mittenfrequenz recht flach ist, das heisst, schlecht abstimmbar. Laut dem erwarteten Phasengang eines Bandpasses wird sich dort die Phase aber schnell ändern und bei perfekter Abstimmung bei 45° sein. Deshalb werden wird den Bandpass über die Phasenverschiebung abstimmen.
+Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. \autoref{bandpass} zeigt ein konzeptuelles Bodediagramm eines Bandpasses. Man kann gut sehen, dass die Amplitude in der Nähe der Mittenfrequenz recht flach ist, das heisst, schlecht abstimmbar. Laut dem erwarteten Phasengang eines Bandpasses wird sich dort die Phase aber schnell ändern und bei perfekter Abstimmung bei 45° sein. Deshalb werden wird den Bandpass über die Phasenverschiebung abstimmen.
 
 \begin{figure}[ht]
 	\centering
@@ -173,18 +175,18 @@ Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. A
 	\label{bandpass}
 \end{figure}
 
-Für die Abstimmung haben wir die Widerstände R2 und R0 (siehe \autoref{schema}, bzw. \autoref{Aufbau}) mit Potentiometern ergänzt. Somit können wir mit dem Potentiometer R\textsubscript{02} die Vewrstärkung und mit R\textsubscript{22} die Phase abstimmen.
+Für die Abstimmung haben wir die Widerstände R2 und R0 (siehe \autoref{schema}, bzw. \autoref{Aufbau}) mit Potentiometern ergänzt. Somit können wir mit dem Potentiometer $R_{02}$ die Verstärkung und mit $R_{22}$ die Phase (und somit die Mittenfrequenz) abstimmen.
 
 \subsection{Messung}
-Um zu schauen wie sich das Filter verhält und ob es gut dimensioniert ist, haben wir den Amplitudengang und den Phasengang gemessen. Dabei haben wir vorallem im Bereich der Mittenfrequenz einige Punkte erfasst. 
+Um zu schauen wie sich das Filter verhält und ob es gut dimensioniert ist, haben wir den Amplitudengang und den Phasengang gemessen. Dabei haben wir vor allem im Bereich der Mittenfrequenz einige Punkte erfasst. 
 Messmittelliste und Messtabelle sind im Anhang zu finden. 
 
 
 
 \subsection{Fehlerabschätzung}
-Es ist recht schwer den Fehler abzuschätzen. Jedoch haben wir die Abstimmung recht gut hingekriegt, sodass die Mittenfrequenz sehr genau bei 1kHz liegt. Ob wir jedoch dabei immer noch die Verlangte Verstärkung einhalten und die Güte noch stimmt, haben wir nicht so genau ermittelt. Dafür hat uns die Zeit schlicht weg nicht mehr gereicht. Aber wir können die Güte abschätzen, indem wir die Bandbreite herauslesen. Bei gegebener (abgestimmter) Mittenfrequenz kann man damit auf die Güte schliessen. Daraus erfolgt eine Güte von Q = 2.9, was doch ziemlich von den gewünschten 5 abweicht.
+Es ist recht schwer den Fehler abzuschätzen. Jedoch haben wir die Abstimmung recht gut hingekriegt, sodass die Mittenfrequenz sehr genau bei 1kHz liegt. Ob wir jedoch dabei immer noch die geforderte Verstärkung einhalten und die Güte noch stimmt, haben wir nicht so genau ermittelt. Dafür hat die Zeit nicht mehr gereicht. Aber wir können die Güte abschätzen, indem wir die Bandbreite herauslesen. Bei gegebener (abgestimmter) Mittenfrequenz kann man damit auf die Güte schliessen. Daraus erfolgt eine Güte von Q = 2.9, was doch ziemlich von den gewünschten 5 abweicht.
 
-Bei der Verstärkung kommen wir auch nur auf einen Wert von 12.5 und liegen damit etwa um Faktor zwei daneben. Evtl. liegt hier ein Umrechnungsproblem bei der von Spannung zu Dezibel vor.
+Bei der Verstärkung kommen wir auch nur auf einen Wert von 12.5 und liegen damit etwa um Faktor zwei daneben. Evtl. liegt hier ein Umrechnungsproblem bei von Spannung zu Dezibel vor.
 
 \subsection{Diskussion}
 
@@ -195,12 +197,12 @@ Bei der Verstärkung kommen wir auch nur auf einen Wert von 12.5 und liegen damit
 	\label{Bodediagram}
 \end{figure}
 
-In den Grafiken sieht man schön, dass die Mittenfrequenz sauber bei 1kHz abgestimmt ist. Die Messung ist dabei sogar genauer als die Simulation. Dies liegt vermutlich daran, dass wir bei der Simulation die genau berechneten Werte für die Widerstände eingesetzt haben und diese nicht noch auf 1kHz abgestimmt haben.
+In den Grafiken sieht man schön, dass die Mittenfrequenz sauber auf 1kHz abgestimmt ist. Die Messung ist dabei sogar genauer als die Simulation. Dies liegt vermutlich daran, dass wir bei der Simulation die genau berechneten Werte für die Widerstände eingesetzt haben und diese nicht noch auf 1kHz abgestimmt haben.
 
 
 
 \section{Schlussfolgerung}
-Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir beim Aufbau zu viel Zeit verloren, die uns danach gefehlt hat, um die Auswertung noch detaillierter zu gestalten. So hatten wir zum Beispiel keine Zeit mehr die Güte anhand der Bandbreite und der Mittenfrequenz nachzukontrollieren. 
+Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir bei der Fehlersuche im Hardware Aufba viel Zeit verloren, die uns danach für die detaillierte Auswertung gefehlt hat. So hatten wir zum Beispiel keine Zeit mehr, die Güte anhand der Bandbreite und der Mittenfrequenz mit Messungen nachzukontrollieren. 
 
 
 \section{Formeln (kommen am schluss noch in den Fliesstext - nur als container hier}
@@ -248,6 +250,8 @@ Widerstände:
 \appendix
 % Nur im Inhaltsverzeichnis hinzufügen (mit richtiger Seite, da vorher "\newpage"), aber kein Text
 \addcontentsline{toc}{section}{Anhang}
+
+
 
 \includepdf{Praktikumsunterlagen.pdf}
 
