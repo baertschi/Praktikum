@@ -1,8 +1,8 @@
 %% Dokumenteinstellungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[a4paper,oneside,12pt]{scrartcl}
+\documentclass[a4paper,oneside,12pt,ngerman]{scrartcl}
 
 %% Deutsche Anpassungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage[ngerman]{babel}
+\usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[ansinew]{inputenc}
 \usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
@@ -65,7 +65,7 @@
 \textbf{Abstract}
 \vspace{0.3cm}
 
-	Dieser Bericht ist ergänzend zum Laborjournal und enthält vertiefte Diskussion der gemessenen Resultate, sowie die detailierten Berechnungen.
+	Dieser Bericht ist ergänzend zum Laborjournal und enthält vertiefte Diskussion der gemessenen Resultate, sowie die detaillierten Berechnungen.
 \end{center}
 	
 \end{abstract}
@@ -83,12 +83,12 @@
 
 \section{Ziel}
 
-Dieser Bericht beinhaltet genaue Angaben zur Durchführung und eine Diskussion des Versuches Aktive Filter im Modul BTE5032.02. Es soll ein aktives Filter dimensioniert, aufgebaut und ausgemessen werden. Die Resultate sollen anschliessend mit Resultaten aus einer Simulation verglichen und diskutiert werden.
+Dieser Bericht beinhaltet genaue Angaben zur Durchführung und eine Diskussion des Versuches \emph{Aktive Filter} im Modul \emph{BTE5032.02}. Es soll ein aktives Filter dimensioniert, aufgebaut und ausgemessen werden. Die Resultate sollen anschliessend mit Resultaten aus einer Simulation verglichen und diskutiert werden.
 
 \section{Einleitung}
 
 \subsection{Motivation}
-Die im letzten Semester erlernte Filtertheorie soll mit diesem Praktikum in der Praxis nachvollzogen und zu vertieft werden. Ausserdem soll während dem Praktikum ein Laborjournal geführt werden. Dies soll soweit geübt werden, dass es im Arbeitsalltag als Elektroingenieur zur Gewohnheit wird.
+Die im letzten Semester erlernte Filtertheorie soll mit diesem Praktikum in der Praxis nachvollzogen und vertieft werden. Ausserdem soll während dem Praktikum ein Laborjournal geführt werden. Dies soll soweit geübt werden, dass es im Arbeitsalltag als Elektroingenieur zur Gewohnheit wird.
 
 \subsection{Aufgabenstellung}
 Die Aufgabenstellung ist unter \url{http://moodle.bfh.ch/course/view.php?id=3380} oder im Anhang zu finden.
@@ -96,7 +96,7 @@ Die Aufgabenstellung ist unter \url{http://moodle.bfh.ch/course/view.php?id=3380
 \section{Durchführung}
 
 \subsection{Theorie}
-Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensatoren und Widerständen. Dies bedeutet, dass das Filter an die Speisung angeschlossen ist. Es hat verglichen zum passiven Filter (welches ausschliesslich aus diskreten Elementen wie Widerständen, Kondensatoren und Spulen besteht und nicht gespiesen wird) die Vorteile, dass es einfacher höhere Ordnungen erzielen kann und eine Verstärkung enthält.
+Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensatoren und Widerständen. Dies bedeutet, dass das Filter an die Speisung angeschlossen ist. Verglichen mit dem passiven Filter (welches ausschliesslich aus diskreten Elementen wie Widerständen, Kondensatoren und Spulen besteht und nicht gespiesen wird) hat es die Vorteile, dass es einfacher höhere Ordnungen erzielen kann und eine Verstärkung beinhaltet.
 
 \begin{figure}[ht]
 	\centering
@@ -105,7 +105,7 @@ Ein aktives Filter besteht aus einem OpAmp mit einer Beschaltung aus Kondensator
 	\label{konzeptschema}
 \end{figure}
 
-Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe Figure \ref{konzeptschema}). Der Verstärkerblock mit der Bezeichnung $\beta$ ist im Prinzip eine nicht-invertierende OpAmp-Verstärkerschaltung mit einer Offset-Kompensation, wobei die innere Verstärkung durch die Gegenkopplung realisiert ist.
+Hier verwenden wir ein Bandpassfilter zweiter Ordnung (siehe \autoref{konzeptschema}). Der Verstärkerblock mit der Bezeichnung $\beta$ ist im Prinzip eine nicht-invertierende OpAmp-Verstärkerschaltung mit einer Offset-Kompensation, wobei die innere Verstärkung durch die Gegenkopplung realisiert ist.
 
 \subsection{Dimensionierung}
 Bei der Dimensionierung sind wir genau nach der Aufgabenstellung vorgegangen. Vorgegeben waren folgende Werte: f\textsubscript{0} = 1kHz, Q = 5, K = 25, C = 10nF
@@ -173,7 +173,7 @@ Wir speisen am Eingang die Mittenfrequenz ein und messen am Ausgang die Phase. A
 	\label{bandpass}
 \end{figure}
 
-Für die Abstimmung haben wir die Widerstände R2 und R0 (siehe Figure \ref{schema}, bzw. Figure \ref{Aufbau}) mit Potentiometern ergänzt. Somit können wir mit dem Potentiometer R\textsubscript{02} die Vewrstärkung und mit R\textsubscript{22} die Phase abstimmen.
+Für die Abstimmung haben wir die Widerstände R2 und R0 (siehe \autoref{schema}, bzw. \autoref{Aufbau}) mit Potentiometern ergänzt. Somit können wir mit dem Potentiometer R\textsubscript{02} die Vewrstärkung und mit R\textsubscript{22} die Phase abstimmen.
 
 \subsection{Messung}
 Um zu schauen wie sich das Filter verhält und ob es gut dimensioniert ist, haben wir den Amplitudengang und den Phasengang gemessen. Dabei haben wir vorallem im Bereich der Mittenfrequenz einige Punkte erfasst. 
