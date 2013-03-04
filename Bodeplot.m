@@ -22,10 +22,10 @@ xlabel('Frequenz in [Hz]','FontSize',12), ylabel('Amplitude','FontSize',12)
 % simulierter Phasengang zeichnen
 subplot(4, 1, 3),   plot(simulation.data*[1 0 0]', simulation.data*[0 0 1]')
 title('\it{Simulation}','FontSize',16)
-xlabel('Frequenz in [Hz]','FontSize',12), ylabel('Amplitude','FontSize',12)
+xlabel('Frequenz in [Hz]','FontSize',12), ylabel('Phase','FontSize',12)
 
 % gemessener Phasengang zeichnen
 subplot(4, 1, 4),   plot(measure.data.Sheet1*[1 0 0]', measure.data.Sheet1*[0 1 0]')
 title('\it{Messung}','FontSize',16)
-xlabel('Frequenz in [Hz]','FontSize',12), ylabel('Amplitude','FontSize',12)
+xlabel('Frequenz in [Hz]','FontSize',12), ylabel('Phase','FontSize',12)
 
