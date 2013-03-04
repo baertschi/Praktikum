@@ -6,7 +6,9 @@ simulation = importdata('Aktives Filter.txt');
 % Messwerte laden
 measure = importdata('Messdaten Aktive Filter.xlsx');
 
-% Messdaten aufbereiten, Spannung in dB umrechnen
+% Messdaten aufbereiten, Spannung in dB umrechnen. Die Messdaten sind als
+% Effektivewrt in mV gespeichert, also durch 1000 rechnen um auf dBV zu
+% kommen
 amp_dB = 20*log(measure.data.Sheet1*[0 0 1]'/1000);
 
 % simulierter Amplitudengang zeichnen
