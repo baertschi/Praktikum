@@ -6,6 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[ansinew]{inputenc}
 \usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+\usepackage{booktabs}	% schönere tabellen
 
 %% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx} %%Zum Laden von Grafiken
@@ -60,6 +61,10 @@
 
 %% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents %Inhaltsverzeichnis
+
+\vfill
+
+\listoffigures
 
 %\pagestyle{fancy} %%Ab hier die Kopf-/Fusszeilen: headings / fancy / ...
 
@@ -267,36 +272,20 @@ In den Grafiken bei \autoref{Bodediagram} sieht man schön, dass die Mittenfreque
 Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir bei der Fehlersuche im Hardware-Aufbau viel Zeit verloren, die uns danach für die detaillierte Auswertung gefehlt hat. So hatten wir zum Beispiel keine Zeit mehr, die Güte anhand der Bandbreite und der Mittenfrequenz mit Messungen nachzukontrollieren.
 
 
-
-% Quellenverzeichnis
-\addcontentsline{toc}{section}{Quellenverzeichnis}
-\renewcommand\refname{Quellenverzeichnis}
-
-\bibliographystyle{amsplain}
-\bibliography{Bildquellen}
-
-%\listoffigures
-
 \vfill
-
-
-
 \begin{tabular}{rr}
 	\\
 	\\
 	\\
 	\\
 	\toprule
-	\scriptsize{Datum und Unterschrift}	\hspace{3cm}	&	\textsc{Dario Colombo}	\\
+	\scriptsize{Datum und Unterschrift}	\hspace{3cm}	&	\textsc{Marcel Bärtschi}	\\
 	\\
 	\\
 	\\
 	\\
 	\toprule
 	\scriptsize{Datum und Unterschrift}	\hspace{3cm}	&	\textsc{Cyril Stoller}
-	\\
-	\\
-	\\
 \end{tabular}
 
 
@@ -307,14 +296,22 @@ Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung
 % Nur im Inhaltsverzeichnis hinzufügen (mit richtiger Seite, da vorher "\newpage"), aber kein Text
 \addcontentsline{toc}{section}{Anhang}
 
+% Quellenverzeichnis
+%\addcontentsline{toc}{section}{Quellenverzeichnis}
+\section{Quellenverzeichnis}
+\renewcommand\refname{}
 
-\section*{Anhang}
+\vspace{-1cm}
+
+\bibliographystyle{amsplain}
+\bibliography{Bildquellen}
+
 \section{Messmittelliste}
 \begin{itemize}
 	\item Signalgenerator: HP 33120A (MG 231-2)
 	\item Speisegerät: TTi PL320QMD (MN 221-4)
 	\item Multimeter: HP 34401A (MM 319-2) (für RMS messungen)
-	\item Phasemeter: 
+	\item Phasemeter: BFH-eigenes Gerät
 	\item KO:  Agilent DSO1022A (MK220-2)
 	\item Multimeter: roline RO-334 (für Widerstände und Speisegerät Kontrolle)
 \end{itemize}
@@ -322,46 +319,49 @@ Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung
 \section{Messtabelle}
 
 \begin{tabular}{|l|l|l|}
-\hline
-Frequenz in [Hz] & Amplitude EFF [mV] & Phase in [°] \\
-\hline
-\hline 
-200 &	87.6 & 70 \\
-\hline
-400	&84.9	&157 \\
-\hline
-600	&80.3	&307 \\
-\hline
-800	&68.3	&682 \\
-\hline
-850	&61.2	&886 \\
-\hline
-900	&49.7	&1190 \\
-\hline
-950	&29.6	&1599 \\
-\hline
-1000 &0	&1868 \\
-\hline
-1050 &-28.7	&1660 \\
-\hline
-1100 &-47	&1296 \\
-\hline
-1150 &-57.4	&1018 \\
-\hline
-1200 &-64.2	&828 \\
-\hline
-1400 &-75.5	&475 \\
-\hline
-1600 &-79.7	&338 \\
-\hline
-1800 &-81.9	&267 \\
-\hline
-2000 &-83.2 &222 \\
-\hline
-2200 &-84.1 &191 \\
-\hline
-\hline
+	\hline
+	Frequenz in [Hz] & Amplitude EFF [mV] & Phase in [°] \\
+	\hline
+	\hline 200 &	87.6 & 70 \\
+	\hline
+	400	&84.9	&157 \\
+	\hline
+	600	&80.3	&307 \\
+	\hline
+	800	&68.3	&682 \\
+	\hline
+	850	&61.2	&886 \\
+	\hline
+	900	&49.7	&1190 \\
+	\hline
+	950	&29.6	&1599 \\
+	\hline
+	1000 &0	&1868 \\
+	\hline
+	1050 &-28.7	&1660 \\
+	\hline
+	1100 &-47	&1296 \\
+	\hline
+	1150 &-57.4	&1018 \\
+	\hline
+	1200 &-64.2	&828 \\
+	\hline
+	1400 &-75.5	&475 \\
+	\hline
+	1600 &-79.7	&338 \\
+	\hline
+	1800 &-81.9	&267 \\
+	\hline
+	2000 &-83.2 &222 \\
+	\hline
+	2200 &-84.1 &191 \\
+	\hline
+	\hline
 \end{tabular}
+
+\section{Matlab Code}
+
+\section{Aufgabenstellung Praktikum}
 
 
 \includepdf{MatlabSkript.pdf}
