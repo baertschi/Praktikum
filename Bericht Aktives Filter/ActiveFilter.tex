@@ -182,8 +182,17 @@ Bei dieser Wahl blieb nicht viel Spielraum übrig.
 \end{figure}
 
 \subsection{Simulation}
-Die Simulation wurde in LT Spice durchgeführt. Da in der Aufgabenstellung der OpAmp LM741 vorgegeben ist, mussten wir diesen zuerst noch im Spice hinzufügen. 
-Danach die Simulation gemäss dem Schema aufbauen und die Werte entsprechend Dimensionierung wählen. Die Widerstände haben wir in der Simulation genau auf den berechneten Wert eingestellt. Bei der realen Schaltung haben wir einen Näherungswert genommen und mit einem Potentiometer in Serie zum Widerstand den Wert genau abgeglichen.
+Die Simulation wurde in LT Spice durchgeführt. Da in der Aufgabenstellung der OpAmp LM741 vorgegeben ist, mussten wir diesen zuerst noch im Spice hinzufügen.
+Danach wurde die Simulation gemäss dem Schema aufgebaut und die Werte entsprechend der Dimensionierung gewählt (siehe \autoref{pspice_schema}). Die Widerstände haben wir in der Simulation genau auf den berechneten Wert eingestellt. Bei der realen Schaltung haben wir einen Näherungswert genommen und mit einem Potentiometer in Serie zum Widerstand den Wert genau abgeglichen.
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.70\textwidth]{images/pspice_schema.pdf}
+	\caption{Schema der Simulation im LT Spice}
+	\label{pspice_schema}
+\end{figure}
+
+Das Ergebnis der Simulation in \autoref{simulation_bode} stimmt recht genau mit dem gemessenen Ergebnis überein. Jedoch ist die Mittenfrequenz nicht genau gleich abgestimmt.
 
 \begin{figure}[!ht]
 	\centering
@@ -196,8 +205,6 @@ Danach die Simulation gemäss dem Schema aufbauen und die Werte entsprechend Dime
 	\caption{Bodediagramm der simulierten Filtercharakteristik}
 	\label{simulation_bode}
 \end{figure}
-
-Das Ergebnis der Simulation in \autoref{simulation_bode} stimmt recht genau mit dem gemessenen Ergebnis überein. Jedoch ist die Mittenfrequenz nicht genau gleich abgestimmt. Die Bandbreite der Simulation beträgt 
 
 \subsection{Aufbau}
 Der Aufbau auf der Steckplatte (\autoref{Aufbau}), hat uns am meisten Schwierigkeiten bereitet. Gleich zwei Mal hatten wir einen Fehler im Aufbau. 
@@ -252,22 +259,14 @@ Bei der Verstärkung kommen wir auch nur auf einen Wert von 12.5 und liegen damit
 	\label{Bodediagram}
 \end{figure}
 
-In den Grafiken sieht man schön, dass die Mittenfrequenz sauber auf 1kHz abgestimmt ist. Die Messung ist dabei sogar genauer als die Simulation. Dies liegt vermutlich daran, dass wir bei der Simulation die genau berechneten Werte für die Widerstände eingesetzt haben und diese nicht noch auf 1kHz abgestimmt haben.
+In den Grafiken bei \autoref{Bodediagram} sieht man schön, dass die Mittenfrequenz sauber auf 1kHz abgestimmt ist. Die Messung ist dabei sogar genauer als die Simulation. Dies liegt vermutlich daran, dass wir bei der Simulation die genau berechneten Werte für die Widerstände eingesetzt haben und diese nicht noch auf 1kHz abgestimmt haben.
 
 
 
 \section{Schlussfolgerung}
-Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir bei der Fehlersuche im Hardware Aufba viel Zeit verloren, die uns danach für die detaillierte Auswertung gefehlt hat. So hatten wir zum Beispiel keine Zeit mehr, die Güte anhand der Bandbreite und der Mittenfrequenz mit Messungen nachzukontrollieren.
+Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung gut durchführen konnten. Leider haben wir bei der Fehlersuche im Hardware-Aufbau viel Zeit verloren, die uns danach für die detaillierte Auswertung gefehlt hat. So hatten wir zum Beispiel keine Zeit mehr, die Güte anhand der Bandbreite und der Mittenfrequenz mit Messungen nachzukontrollieren.
 
 
-
-\addcontentsline{toc}{section}{Quellenverzeichnis}
-
-\renewcommand\refname{Quellenverzeichnis}
-\bibliographystyle{amsplain}
-\bibliography{Bildquellen}
-
-%\listoffigures
 
 % Der Anhang kommt auf eine neue Zeile
 \newpage
@@ -276,6 +275,14 @@ Als Fazit können wir sagen, dass wir mit Hilfe der Anleitung die Dimensionierung
 % Nur im Inhaltsverzeichnis hinzufügen (mit richtiger Seite, da vorher "\newpage"), aber kein Text
 \addcontentsline{toc}{section}{Anhang}
 
+% Quellenverzeichnis
+\addcontentsline{toc}{section}{Quellenverzeichnis}
+\renewcommand\refname{Quellenverzeichnis}
+
+\bibliographystyle{amsplain}
+\bibliography{Bildquellen}
+
+%\listoffigures
 
 \includepdf{Praktikumsunterlagen.pdf}
 
